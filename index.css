@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');   
+
+body{
+    background-color: rgba(255, 181, 255, 0.521);
+    margin: 0;
+}
+
+/* EL HEADER ESTÁ REALIZADO CON FLEX*/
+header{
+    align-items: center;
+    background-color: rgb(83, 0, 94);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+header>h1{
+    font-family: "Pacifico", cursive;
+    margin: 10px;
+    letter-spacing: 0.2em; /* Agrega un espacio equivalente a 0.2 veces el tamaño de la fuente */
+}
+
+section{
+    display: flex;
+    justify-content: stretch;
+    margin-inline-start: 10vw;
+    margin-inline-end: 10vw;
+}
+        
+section>aside{
+    position: fixed;
+}
+
+#izquierda{
+    left: 0;
+}
+
+#derecha{
+    right: 0;
+}
+
+main{
+    font-family: "Sour Gummy", sans-serif;
+    display: grid;
+    height: 61vh;
+    overflow-y: scroll;
+}
+
+.saga{
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    justify-content: center;
+}
+
+.saga>span{
+    color: rgb(83, 0, 94);
+    font-weight: bold;
+}
+
+.saga>h2{
+    color: rgb(83, 0, 94);
+    font-size: 2em;
+    margin: 10px;
+}
+
+.gridLibros{
+    align-content: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    justify-content: stretch;
+}
+
+.gridLibros>img{
+    width: 100%; /* Ajusta la imagen al contenedor*/
+    border-radius: 10px;
+}
+
+.formulario{
+    align-items: center;
+    color: rgb(83, 0, 94);
+    display: flex;
+    font-family: "Sour Gummy", sans-serif;
+    gap: 5px;
+    justify-content: center;
+}
+
+.formulario>h2{
+    margin: 5px;
+}
+
+form{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    font-size: 15px;
+}
+
+/* EL APARTADO DE FOOTER Y SUS DIVS ESTÁN REALIZADOS CON FLEX */
+footer{
+    align-items: center;
+    background-color: rgb(83, 0, 94);
+    bottom: 0;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+}
+
+.asignatura{
+    font-family: "Sour Gummy", sans-serif;
+    margin: 0px; 
+}
+
+.autor{
+    font-family: "Sour Gummy", sans-serif;
+    margin: 0px;    
+}
+
+.redesSociales{
+    align-self: center;
+}
+
+.redesSociales>a>img{
+    width: 30px;
+}
+
+/*Ajustes para moviles*/
+@media (max-width: 767px) {
+    header{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section{
+        flex-direction: column;
+
+    }
+    main{
+        margin: 10px;
+        height: 68vh;
+    }
+
+    .gridLibros{
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    footer{
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/*Ajustes para tablets*/
+@media  (min-width: 768px) and (max-width:1023px) {
+    header>h1{
+        font-size: 1.8em;
+    }
+    
+    section{
+        margin-inline: 50px;
+    }
+
+    main{
+        margin: 0;
+        height: 81vh;
+    }
+
+    .gridLibros{
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+
+/*Ajustes para laptop*/
+@media (min-width: 1024px) and (max-width: 1439px){
+    header>h1{
+        font-size: 2em;
+    }
+
+    section{
+        margin-inline: 10vw;
+    }
+
+    main{
+        margin: 0;
+        height: 80vh;
+    }
+
+    .gridLibros{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/*Ajustes para Desktop*/
+@media (min-width: 1440px) {
+    header>h1{
+        font-size: 2.5em;
+    }
+
+    section{
+        margin-inline: 12vw;
+    }
+
+    main{
+        height: 60vh;
+    }
+
+    .gridLibros{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 25px;
+    }
+}
