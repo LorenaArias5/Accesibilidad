@@ -248,7 +248,7 @@ footer{
 }
 
 /*Ajustes para laptop*/
-@media (min-width: 1024px) and (max-width: 1439px){
+@media (min-width: 1024px) and (max-width: 1440px){
     header>h1{
         font-size: 3em;
     }
@@ -284,6 +284,24 @@ footer{
         margin: 0 auto;
     }
 
+    #nombre{
+        font-size: 18px;
+    }
+
+    #apellidos{
+        font-size: 18px;
+    }
+
+    #email{
+        font-size: 18px;
+    }
+
+    #boton{
+        align-items: center;
+        font-size: 25px;
+        margin: 0 auto;
+    }
+
     footer{
         text-align: center;
         padding-top: 8px;
@@ -306,7 +324,7 @@ footer{
 }
 
 /*Ajustes para Desktop*/
-@media (min-width: 1440px) {
+@media (min-width: 1441px) {
     header>h1{
         font-size: 4em;
     }
