@@ -2,18 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');   
 
 body{
-    background-color: rgba(255, 181, 255, 0.521);
+    background-color: #fedefe;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
     margin: 0;
 }
 
-/* EL HEADER ESTÁ REALIZADO CON FLEX*/
 header{
     align-items: center;
-    background-color: rgb(83, 0, 94);
+    background-color: #53005e;
     color: aliceblue;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    display: grid;
+    grid-column: 1/4;
+    justify-items: center;
 }
 
 header>h1{
@@ -22,71 +23,49 @@ header>h1{
     letter-spacing: 0.2em; /* Agrega un espacio equivalente a 0.2 veces el tamaño de la fuente */
 }
 
-section{
-    display: flex;
-    justify-content: stretch;
-    margin-inline-start: 10vw;
-    margin-inline-end: 10vw;
-}
-        
-section>aside{
-    position: fixed;
-}
-
-#izquierda{
-    left: 0;
-}
-
-#derecha{
-    right: 0;
-}
-
 main{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     font-family: "Sour Gummy", sans-serif;
-    display: grid;
-    height: 61vh;
-    overflow-y: scroll;
+    margin-bottom: 10px;
 }
 
 .saga{
     align-items: center;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
-    justify-content: center;
+    color: rgb(83, 0, 94);
+    display: flex;
 }
 
 .saga>span{
-    color: rgb(83, 0, 94);
-    font-weight: bold;
+    margin: 15px;
 }
 
 .saga>h2{
-    color: rgb(83, 0, 94);
     font-size: 2em;
-    margin: 10px;
 }
 
-.gridLibros{
-    align-content: stretch;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    justify-content: stretch;
+.libros{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
 }
 
-.gridLibros>img{
-    width: 100%; /* Ajusta la imagen al contenedor*/
-    border-radius: 10px;
+.libros>img{
+    width: 250px; /* Ajusta la imagen al contenedor*/
+    border-radius: 15px;
 }
 
 .formulario{
     align-items: center;
     color: rgb(83, 0, 94);
-    display: flex;
+    display: grid;
+    grid-column: 1/4;
     font-family: "Sour Gummy", sans-serif;
     gap: 5px;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .formulario>h2{
@@ -95,34 +74,21 @@ main{
 
 form{
     align-items: center;
-    display: flex;
-    justify-content: center;
 }
 
 button{
     font-size: 15px;
 }
 
-/* EL APARTADO DE FOOTER Y SUS DIVS ESTÁN REALIZADOS CON FLEX */
 footer{
     align-items: center;
     background-color: rgb(83, 0, 94);
-    bottom: 0;
-    color: aliceblue;
+    color: #f0f8ff;
     display: flex;
+    font-family: "Sour Gummy", sans-serif;
+    grid-column: 1/4;
     justify-content: space-around;
-    position: fixed;
     width: 100%;
-}
-
-.asignatura{
-    font-family: "Sour Gummy", sans-serif;
-    margin: 0px; 
-}
-
-.autor{
-    font-family: "Sour Gummy", sans-serif;
-    margin: 0px;    
 }
 
 .redesSociales{
@@ -131,94 +97,284 @@ footer{
 
 .redesSociales>a>img{
     width: 30px;
+    height: 30px;
 }
 
 /*Ajustes para moviles*/
 @media (max-width: 767px) {
     header{
-        flex-direction: column;
         text-align: center;
     }
 
-    section{
-        flex-direction: column;
-
-    }
-    main{
-        margin: 10px;
-        height: 68vh;
+    header>h1{
+        font-size: 14px;
     }
 
-    .gridLibros{
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .saga{
+        font-size: 9px;
     }
     
-    footer{
-        flex-direction: column;
-        text-align: center;
+    .saga>span{
+        font-weight: bold;
+        font-size: 18px;
+        margin: 8px;
     }
 
+    .libros{
+        gap: 10px;
+    }
+
+    .libros>img{
+        width: 125px;
+        border-radius: 15px;
+    }
+
+    .formulario{
+        align-items: center;
+    }
+    
+    .formulario>h2{
+        font-size: 16px;
+    }
+    
+    form{
+        font-size: 15px;
+        margin: 0 auto;
+    }
+
+    #nombre{
+        font-size: 12px;
+    }
+
+    #apellidos{
+        font-size: 12px;
+    }
+
+    #email{
+        font-size: 12px;
+    }
+
+    #boton{
+        align-items: center;
+        font-size: 12px;
+        margin: 0 auto;
+    }
+
+    footer{
+        text-align: center;
+        padding-top: 4px;
+    }
+
+    .asignatura{
+        font-size: 10px;
+    }
+
+    .autor{
+        font-size: 10px;
+    }
+
+    .redesSociales>a>img{
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /*Ajustes para tablets*/
 @media  (min-width: 768px) and (max-width:1023px) {
     header>h1{
-        font-size: 1.8em;
+        font-size: 1.7em;
+    }
+
+    .saga{
+        font-size: 15px;
     }
     
-    section{
-        margin-inline: 50px;
+    .saga>span{
+        font-weight: bold;
+        font-size: 28px;
+        margin: 12px;
     }
 
-    main{
-        margin: 0;
-        height: 81vh;
-    }
-
-    .gridLibros{
-        grid-template-columns: 1fr 1fr;
+    .libros{
         gap: 15px;
     }
+
+    .libros>img{
+        width: 180px;
+        border-radius: 15px;
+    }
+
+    .formulario{
+        align-items: center;
+    }
+    
+    .formulario>h2{
+        font-size: 30px;
+    }
+    
+    form{
+        font-size: 25px;
+        margin: 0 auto;
+    }
+
+    #nombre{
+        font-size: 18px;
+    }
+
+    #apellidos{
+        font-size: 18px;
+    }
+
+    #email{
+        font-size: 18px;
+    }
+
+    #boton{
+        align-items: center;
+        font-size: 20px;
+        margin: 0 auto;
+    }
+
+    footer{
+        text-align: center;
+        padding-top: 3px;
+    }
+
+    .redesSociales>a>img{
+        width: 40px;
+        height: 40px;
+    }
+    
 }
 
 /*Ajustes para laptop*/
 @media (min-width: 1024px) and (max-width: 1439px){
     header>h1{
-        font-size: 2em;
+        font-size: 3em;
     }
 
-    section{
-        margin-inline: 10vw;
+    .saga{
+        font-size: 25px;
     }
 
-    main{
-        margin: 0;
-        height: 80vh;
+    .saga>span{
+        font-weight: bold;
+        font-size: 50px;
     }
 
-    .gridLibros{
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
+    .libros{
+        gap: 15px;
     }
+
+    .libros>img{
+        width: 240px;
+        border-radius: 15px;
+    }
+
+    .formulario{
+        align-items: center;
+    }
+    
+    .formulario>h2{
+        font-size: 35px;
+    }
+
+    form{
+        font-size: 30px;
+        margin: 0 auto;
+    }
+
+    footer{
+        text-align: center;
+        padding-top: 8px;
+        padding-bottom: 5px;
+    }
+
+    .asignatura{
+        font-size: 30px;
+    }
+
+    .autor{
+        font-size: 30px;
+    }
+
+    .redesSociales>a>img{
+        width: 60px;
+        height: 60px;
+    }
+
 }
 
 /*Ajustes para Desktop*/
 @media (min-width: 1440px) {
     header>h1{
-        font-size: 2.5em;
+        font-size: 4em;
     }
 
-    section{
-        margin-inline: 12vw;
+    .saga{
+        font-size: 40px;
+    }
+    
+    .saga>span{
+        font-weight: bold;
+        font-size: 70px;
     }
 
-    main{
-        height: 60vh;
+    .libros{
+        gap: 15px;
     }
 
-    .gridLibros{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 25px;
+    .libros>img{
+        width: 295px;
+        border-radius: 15px;
     }
+
+    .formulario{
+        align-items: center;
+    }
+    
+    .formulario>h2{
+        font-size: 50px;
+    }
+    
+    form{
+        font-size: 45px;
+        margin: 0 auto;
+    }
+
+    #nombre{
+        font-size: 30px;
+    }
+
+    #apellidos{
+        font-size: 30px;
+    }
+
+    #email{
+        font-size: 30px;
+    }
+
+    #boton{
+        align-items: center;
+        font-size: 35px;
+        margin: 0 auto;
+    }
+
+    footer{
+        text-align: center;
+    }
+    
+    .asignatura{
+        font-size: 40px;
+    }
+    
+    .autor{
+        font-size: 40px;
+    }
+    
+    .redesSociales>a>img{
+        width: 80px;
+        height: 80px;
+    }
+
 }
